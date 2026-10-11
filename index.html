@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#244a37">
+  <title>PelsPlezier Pro — Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loginView" class="login-screen">
+    <div class="login-art">
+      <div class="brand brand-light"><span class="brand-mark">✦</span><span><b>PelsPlezier</b><small>PRO · PARTNER & OPERATIONS</small></span></div>
+      <div class="login-message">
+        <span class="eyebrow">MEER OVERZICHT. MEER RUST.</span>
+        <h1>Meer tijd voor<br><em>wat écht telt.</em></h1>
+        <p>Alle opdrachten, partners en klanten van PelsPlezier op één overzichtelijke plek.</p>
+      </div>
+      <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+      <div class="pet-card"><div class="pet-avatar">🐕</div><div><b>Milo’s bezoek is afgerond</b><small>Emma Jacobs · 14:32</small></div><span class="check">✓</span></div>
+      <div class="login-foot">Gemaakt voor dierenzorg met een hart.</div>
+    </div>
+    <div class="login-panel">
+      <form id="loginForm" class="login-form">
+        <div class="brand brand-dark"><span class="brand-mark">✦</span><span><b>PelsPlezier</b><small>PRO DASHBOARD</small></span></div>
+        <div class="login-heading"><span class="eyebrow">WELKOM TERUG</span><h2>Goed je weer te zien.</h2><p>Log in om je werkomgeving te openen.</p></div>
+        <label for="email">E-mailadres</label>
+        <input id="email" type="email" placeholder="jouw@email.be" autocomplete="username">
+        <div class="label-row"><label for="password">Wachtwoord</label><button type="button" class="text-button" id="togglePassword">Tonen</button></div>
+        <input id="password" type="password" placeholder="Vul een wachtwoord in" autocomplete="current-password">
+        <button class="btn btn-primary btn-full btn-large" type="submit">Inloggen <span>→</span></button>
+        <p class="demo-note"><span class="status-dot"></span> Demomodus — klik op inloggen om verder te gaan.</p>
+        <div class="login-security">♧ &nbsp; Veilige toegang is voorzien voor de productieversie.</div>
+      </form>
+    </div>
+  </div>
+
+  <div id="appView" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="brand brand-light"><span class="brand-mark">✦</span><span><b>PelsPlezier</b><small>PRO · OPERATIONS</small></span></div>
+        <button class="icon-button mobile-close" id="closeSidebar" aria-label="Menu sluiten">×</button>
+      </div>
+      <button class="region-switch"><span class="region-icon">⌖</span><span><small>JOUW WERKGEBIED</small><b>Willebroek & omstreken</b><small>Willebroek · Boom · Puurs</small></span><span class="chevron">⌄</span></button>
+      <div class="side-search"><span>⌕</span><input id="globalSearch" placeholder="Zoek iets..." aria-label="Zoeken"><kbd>⌘ K</kbd></div>
+      <nav id="navigation">
+        <div class="nav-label">WERKRUIMTE</div>
+        <button class="nav-item active" data-page="Overzicht"><span class="nav-icon">▦</span>Overzicht</button>
+        <button class="nav-item" data-page="Aanvragen"><span class="nav-icon">↳</span>Aanvragen <span class="nav-count" id="requestCount">2</span></button>
+        <button class="nav-item" data-page="Opdrachten"><span class="nav-icon">▣</span>Opdrachten</button>
+        <button class="nav-item" data-page="Planning"><span class="nav-icon">▦</span>Planning</button>
+        <div class="nav-label">NETWERK</div>
+        <button class="nav-item" data-page="Partners"><span class="nav-icon">♧</span>Partners</button>
+        <button class="nav-item" data-page="Klanten & dieren"><span class="nav-icon">♡</span>Klanten & dieren</button>
+        <button class="nav-item" data-page="Berichten & automatisaties"><span class="nav-icon">☷</span>Berichten & automatisaties</button>
+        <div class="nav-label">BEDRIJF</div>
+        <button class="nav-item" data-page="Financiën"><span class="nav-icon">€</span>Financiën</button>
+        <button class="nav-item" data-page="Analytics"><span class="nav-icon">↗</span>Analytics</button>
+        <button class="nav-item" data-page="Instellingen"><span class="nav-icon">⚙</span>Instellingen</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✧</div><b>Slimmer organiseren</b><p>Ontdek waar je tijd kunt besparen met vaste workflows.</p><button data-page="Berichten & automatisaties">Bekijk automatisaties <span>→</span></button></div>
+        <div class="profile-row"><div class="profile-avatar">PP</div><div class="profile-info"><b>PelsPlezier Admin</b><small>Beheerder · demo</small></div><button id="logoutButton" class="icon-button" title="Uitloggen">↪</button></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button id="openSidebar" class="icon-button mobile-menu" aria-label="Menu openen">☰</button>
+        <div class="breadcrumbs">PelsPlezier Pro <span>/</span> <b id="breadcrumbPage">Overzicht</b></div>
+        <div class="topbar-actions">
+          <span class="demo-pill"><i></i> DEMO DATA</span>
+          <button class="icon-button notification-button" id="notificationButton" aria-label="Meldingen">♧<i></i></button>
+          <div class="top-avatar">PP</div>
+        </div>
+      </header>
+      <div class="content-wrap">
+        <div class="page-heading">
+          <div><div class="eyebrow" id="pageEyebrow">ZONDAG 11 OKTOBER 2026 · WILLEBROEK</div><h1 id="pageTitle">Goedemiddag 👋</h1><p id="pageSubtitle">Hier is wat er vandaag speelt binnen jouw regio.</p></div>
+          <button class="btn btn-primary" id="newButton"><span>＋</span> Nieuwe opdracht</button>
+        </div>
+        <div id="toast" class="toast hidden" role="status"></div>
+        <section id="pageContent"></section>
+        <footer class="app-footer"><span>✦ PelsPlezier Pro</span><span>Een demo voor een betere organisatie van dierenzorg.</span><span>v0.1 prototype</span></footer>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="taskDialog" class="modal">
+    <form id="taskForm" method="dialog">
+      <div class="modal-head"><div><span class="eyebrow">OPDRACHTENBEHEER</span><h2 id="taskDialogTitle">Nieuwe opdracht</h2></div><button type="button" class="icon-button" data-close-dialog="taskDialog">×</button></div>
+      <input type="hidden" id="taskId">
+      <div class="form-grid">
+        <div class="field full"><label for="taskClient">Klantnaam *</label><input id="taskClient" required placeholder="Naam van de klant"></div>
+        <div class="field"><label for="taskPet">Dier / notitie</label><input id="taskPet" placeholder="Milo · hond"></div>
+        <div class="field"><label for="taskService">Dienst</label><select id="taskService"><option>Huisbezoek</option><option>Hondenuitlaat</option><option>Dagoppas</option><option>Nachtoppas</option></select></div>
+        <div class="field"><label for="taskDate">Datum *</label><input id="taskDate" type="date" required></div>
+        <div class="field"><label for="taskTime">Uur</label><input id="taskTime" type="time" value="14:00"></div>
+        <div class="field"><label for="taskWorker">Partner</label><select id="taskWorker"></select></div>
+        <div class="field"><label for="taskArea">Regio</label><select id="taskArea"><option>Willebroek</option><option>Boom</option><option>Puurs-Sint-Amands</option><option>Klein-Willebroek</option><option>Andere</option></select></div>
+        <div class="field"><label for="taskPrice">Opdrachtbedrag (€)</label><input id="taskPrice" type="number" min="0" step="0.01" value="35"></div>
+        <div class="field"><label for="taskStatus">Status</label><select id="taskStatus"><option>Nieuw</option><option>Bevestigd</option><option>In uitvoering</option><option>Afgerond</option><option>Geannuleerd</option></select></div>
+        <div class="field full"><label for="taskNotes">Interne notities</label><textarea id="taskNotes" rows="3" placeholder="Bijzonderheden, toegang, instructies..."></textarea></div>
+      </div>
+      <div class="modal-actions"><button type="button" class="btn btn-secondary" data-close-dialog="taskDialog">Annuleren</button><button type="submit" class="btn btn-primary">Opdracht bewaren</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="partnerDialog" class="modal">
+    <form id="partnerForm" method="dialog">
+      <div class="modal-head"><div><span class="eyebrow">PARTNERBEHEER</span><h2>Partner toevoegen</h2></div><button type="button" class="icon-button" data-close-dialog="partnerDialog">×</button></div>
+      <div class="form-grid">
+        <div class="field full"><label for="partnerName">Naam *</label><input id="partnerName" required placeholder="Voor- en achternaam"></div>
+        <div class="field"><label for="partnerArea">Regio</label><select id="partnerArea"><option>Willebroek</option><option>Boom</option><option>Puurs-Sint-Amands</option><option>Klein-Willebroek</option></select></div>
+        <div class="field"><label for="partnerStatus">Status</label><select id="partnerStatus"><option>Actief</option><option>In afwachting</option><option>Gepauzeerd</option></select></div>
+        <div class="field full"><label for="partnerServices">Diensten</label><input id="partnerServices" value="Huisbezoek" placeholder="Huisbezoek, hondenuitlaat..."></div>
+        <div class="field"><label for="partnerEmail">E-mail</label><input id="partnerEmail" type="email" placeholder="partner@email.be"></div>
+        <div class="field"><label for="partnerPhone">Telefoon</label><input id="partnerPhone" placeholder="04xx xx xx xx"></div>
+      </div>
+      <div class="modal-actions"><button type="button" class="btn btn-secondary" data-close-dialog="partnerDialog">Annuleren</button><button type="submit" class="btn btn-primary">Partner bewaren</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="clientDialog" class="modal">
+    <form id="clientForm" method="dialog">
+      <div class="modal-head"><div><span class="eyebrow">KLANTEN & DIEREN</span><h2>Klant toevoegen</h2></div><button type="button" class="icon-button" data-close-dialog="clientDialog">×</button></div>
+      <div class="form-grid">
+        <div class="field full"><label for="clientName">Naam *</label><input id="clientName" required placeholder="Naam van de klant"></div>
+        <div class="field"><label for="clientEmail">E-mail</label><input id="clientEmail" type="email" placeholder="klant@email.be"></div>
+        <div class="field"><label for="clientPhone">Telefoon</label><input id="clientPhone" placeholder="04xx xx xx xx"></div>
+        <div class="field"><label for="clientArea">Regio</label><select id="clientArea"><option>Willebroek</option><option>Boom</option><option>Puurs-Sint-Amands</option><option>Klein-Willebroek</option><option>Andere</option></select></div>
+        <div class="field"><label for="clientPets">Dier(en)</label><input id="clientPets" placeholder="Milo · hond"></div>
+      </div>
+      <div class="modal-actions"><button type="button" class="btn btn-secondary" data-close-dialog="clientDialog">Annuleren</button><button type="submit" class="btn btn-primary">Klant bewaren</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="messageDialog" class="modal">
+    <form id="messageForm" method="dialog">
+      <div class="modal-head"><div><span class="eyebrow">COMMUNICATIE</span><h2>Berichtsjabloon</h2></div><button type="button" class="icon-button" data-close-dialog="messageDialog">×</button></div>
+      <div class="field"><label for="messageTitle">Titel</label><input id="messageTitle" required></div>
+      <div class="field"><label for="messageChannel">Kanaal</label><select id="messageChannel"><option>E-mail</option><option>WhatsApp</option><option>Intern</option></select></div>
+      <div class="field"><label for="messageText">Bericht</label><textarea id="messageText" rows="6" required></textarea></div>
+      <p class="form-hint">Variabelen zoals {voornaam}, {datum}, {uur}, {dier} en {partner} kun je in de productieversie automatisch invullen.</p>
+      <div class="modal-actions"><button type="button" class="btn btn-secondary" data-close-dialog="messageDialog">Annuleren</button><button type="submit" class="btn btn-primary">Sjabloon bewaren</button></div>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
